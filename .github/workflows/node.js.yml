@@ -27,5 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm test:jest
-    - run: npm test:cypress
+    - run: npm run test:jest
+    - run: npm run test:cypress

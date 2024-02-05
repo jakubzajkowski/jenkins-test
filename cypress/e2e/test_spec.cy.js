@@ -1,6 +1,6 @@
 describe('Test', () => {
     it('should do something', () => {
         cy.visit('http://jenkins-test.infinityfreeapp.com/');
-        cy.contains('Test Page')
+        cy.contains('Nowy Test zmiana')
     });
 });
