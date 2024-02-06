@@ -25,10 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
+    - name: Run Build
+      run: npm ci
   test:
     runs-on: ubuntu-latest
-    needs: build
 
     strategy:
       matrix:
@@ -41,5 +41,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm run test:jest
-      - run: npm run test:cypress
+      - run: npm ci
+      - name: Run Jest
+        run: npm run test:jest
+      - name: Run Cypress
+        run: npm run test:cypress
